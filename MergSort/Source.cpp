@@ -24,20 +24,19 @@ void Merge(int * arr, size_t p, size_t q, size_t r)
 	int* rightArray = new int[rightEnd];
 
 	// copy left elements into leftArray
-	for (i = 0; i <= leftEnd; i++) { leftArray[i] = arr[i + p]; }
+	for (i = 0; i <leftEnd; i++) { leftArray[i] = arr[p + i]; }
 	// copy right elements into rightArray
-	for (j = 0; j <= rightEnd; j++) { rightArray[j] = arr[q + j + 1]; }
+	for (j = 0; j < rightEnd; j++) { rightArray[j] = arr[q + j + 1]; }
 	
-	// Why would you need this?
 	i = 0;
 	j = 0;
 
 	// for all values from p to r = k
-	for(int k = p; k < r; k++)
+	for(int k = p; k <=r; k++)
 	{
 		// if (j >= rightEnd) OR
 	    //    (i < leftEnd AND leftArray[i] <= rightArray[j]) then
-		if (j >= rightEnd || i < leftEnd && leftArray[i] <= rightArray[j])
+		if (j >= rightEnd || (i < leftEnd && leftArray[i] <= rightArray[j]))
 		{
 	    // set A[k] to the value of leftArray[i]
 			arr[k] = leftArray[i];
@@ -53,6 +52,8 @@ void Merge(int * arr, size_t p, size_t q, size_t r)
 			j++;
 		}
 	}	
+	delete[] leftArray;
+	delete[] rightArray;
 }
 
 // merge sort
@@ -63,6 +64,8 @@ void MergeSort(int * arr, size_t p, size_t r)
 {
 	if (p < r)
 	{
+		std::cout << "" << std::endl;
+		for (int i = 0; i < r; i++) { std::cout << arr[i]; }
 		int q = (p + r) / 2;
 		MergeSort(arr, p, q);
 		MergeSort(arr, q + 1, r);
@@ -77,14 +80,16 @@ int main()
 	int arraySize = 0;
 	while(EndGame)
 	{
-		arraySize = 10;
-		//std::cout << "Please enter how larg of an array you want to be sorted." << std::endl;
-		//std::cin >> arraySize;
+		arraySize = 7;
+		std::cout << "Please enter how larg of an array you want to be sorted." << std::endl;
+		std::cin >> arraySize;
 		int* arr = new int[arraySize];
-		//std::cout << "please input the numbers to be sorted, any letters you input will be counted as 0." << std::endl;
+		std::cout << "please input the numbers to be sorted, any letters you input will be counted as 0." << std::endl;
 		for(int i = 0; i < arraySize;i++){std::cin >> arr[i];}
-		MergeSort(arr, 0, arraySize);
-		for (int i = 0; i < arraySize;i++){std::cout << arr[i] << std::endl;}
+		MergeSort(arr, 0, arraySize-1);
+		std::cout << "" << std::endl;
+		for (int i = 0; i < arraySize; i++) { std::cout << arr[i]; }
+		std::cout << "" << std::endl;
 		std::cout << "Do you want to exit the program [Y], if no then enter anything but y." << std::endl;
 		std::cin >> leave;
 		if (leave == 'Y' || 'y') { EndGame = false;}
