@@ -1,0 +1,3 @@
+﻿  Source.cpp
+c:\users\s199102\source\repos\mergsort\mergsort\source.cpp(36): warning C4018: '<': signed/unsigned mismatch
+  MergSort.vcxproj -> C:\Users\s199102\source\repos\MergSort\Debug\MergSort.exe
