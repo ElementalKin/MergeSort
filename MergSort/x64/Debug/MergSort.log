@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\school stuff\mergesort\mergsort\source.cpp(18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\school stuff\mergesort\mergsort\source.cpp(19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\school stuff\mergesort\mergsort\source.cpp(35): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\school stuff\mergesort\mergsort\source.cpp(69): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MergSort.vcxproj -> C:\School Stuff\MergeSort\x64\Debug\MergSort.exe
